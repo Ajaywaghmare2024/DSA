@@ -1,36 +1,49 @@
 package com.queue;
 
 public class Queue {
-	int size;
-	int rear, front;
-	int arr[];
+	private int size;
+	private int rear, front;
+	private int arr[];
 
 	public Queue(int size) {
+		super();
 		this.size = size;
-		arr = new int[size];
-		rear = front = -1;
+		this.rear = rear;
+		this.front = front;
+		this.arr = new int[size];
 	}
 
 	public boolean isEmpty() {
-		return (rear == -1 && front == -1)||(front>rear);
+		return (rear == -1 && front == -1) || (front > rear);
 	}
 
 	public boolean isFull() {
 		return rear == (size - 1);
 	}
-	public int insert(int data) {
-		if(isFull()) return 0;
+    
+	public void insert(int data) {
+		if(isFull()) {
+			return;
+		}
 		arr[++rear]=data;
-		if(front ==-1) {
+		if(front==-1) {
 			front=0;
 		}
-	
-		return data;
+		return;
 	}
-	public int  delete() {
-		if(isEmpty()) return -1234;
+	
+	public int remove() {
+		if(isEmpty()) {
+			return 0;
+		}
 		return arr[front++];
+	}
+	
+	public  void display() {
+		for(int i=front+1;i<=rear;i++) {
+			System.out.print(arr[i]+" ");
+		}
 		
 	}
-
+	
 }

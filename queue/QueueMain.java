@@ -1,41 +1,41 @@
 package com.queue;
 
+import java.util.Queue;
+import java.util.Scanner;
+
 public class QueueMain {
 
 	public static void main(String[] args) {
-		
-		  CircularQueue cq=new CircularQueue(5);
-		  
-		System.out.println(cq.insert(40));
-		System.out.println(cq.insert(50));
-		System.out.println(cq.insert(60));
-		System.out.println(cq.insert(70));
-		System.out.println(cq.insert(80));
-		System.out.println(cq.delete());
-		System.out.println(cq.delete());
-		
+		try (Scanner sc = new Scanner(System.in)) {
+			//Queue q=new Queue(4);
+			Queue<Integer>que=null;
+			boolean exit=false;
+			while(!exit) {
+				System.out.println("1.insert data\n2.Display\n3.Delete\n4.Exit");
+				System.out.println("Enter the choice:");
+				switch (sc.nextInt()) {
+				case 1:
+					// insert data
+					System.out.println("Insert data");
+					que.offer(sc.nextInt());
+					System.out.println();
+					break;
+				case 2:
+					// display the data
+					
+					break;
+				
+					
+					
 
-		
-		
-		
-		
-		
-		
-		/*
-		
-		
-		
-		Queue q = new Queue(5);
-		System.out.println(q.insert(10));
-		System.out.println(q.insert(20));
-		System.out.println(q.insert(30));
-		System.out.println(q.insert(40));
-		
-		System.out.println(q.delete());
-		System.out.println(q.delete());
-		System.out.println(q.delete());
-	*/
+				default:
+					break;
+				}
+			}
 
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 
 }
